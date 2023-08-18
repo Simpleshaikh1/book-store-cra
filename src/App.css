@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
+  width: 100%;
+  max-height: 100vh;
+  background-color: #fafafab7;
   display: flex;
   flex-direction: column;
+  gap: 80px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.book-container {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  margin-left: 4rem;
+  width: 90%;
+  padding: 1%;
+  margin-bottom: 1rem;
+  background-color: white;
+  border: 1px solid rgb(221, 229, 224);
+}
+
+.left-side {
+  display: block;
+  margin-right: 30rem;
+  width: 60rem;
+  text-align: left;
+}
+
+.commentPart {
+  padding-top: 4%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+}
+
+.navbar {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 4% 8%;
+  height: 60px;
+}
+
+.navbar h1 {
+  font-size: 48px;
+  line-height: 2em;
+  font-weight: 700;
+  color: #496e93;
+}
+
+.navLeft {
+  align-items: center;
+  display: flex;
+  gap: 70px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  list-style: none;
+  text-decoration: none;
+  font-size: 20px;
+  color: #7b7b7b;
+}
+
+.navRight {
+  display: flex;
+  font-size: 40px;
+  color: #628ebb;
+  align-items: center;
+}
+
+nav ul li a {
+  font-size: 20px;
+  color: #7b7b7b;
+  list-style: none;
+}
+
+.container {
+  padding: 4% 8%;
+}
+
+.addBookBtn {
+  padding: 1% 1%;
+  width: 20%;
+  background-color: #d4dfeb;
+  height: 50px;
+  color: #fff;
+}
+
+.form {
+  display: flex;
+  gap: 30px;
+}
+
+.form input,
+select {
+  height: 50px;
+  width: 50%;
+  padding: 2%;
+}
+
+.form select {
+  padding: 0 2% 0 2%;
+  color: #7b7b7b;
+  height: 50px;
+  width: 30%;
+}
+
+.progressBar {
+  width: 20%;
+  margin-right: 15rem;
+  padding-top: 20px;
+}
+
+.bookRight {
+  width: 40rem;
+}
+
+.title {
+  text-align: left;
+}
+
+.author {
+  color: green;
+}
+
+.span {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.progress {
+  margin-top: 2rem;
+  background-color: green;
+  padding: 5px;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
