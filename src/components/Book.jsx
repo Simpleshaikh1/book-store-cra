@@ -6,7 +6,14 @@ import {getBook, deleteBook} from "../redux/books/bookSlice";
 import Button from "./Btn";
 
 const Book = ({ book }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
+  const boook = {
+    completed:10,
+    percentage:10,
+    action:"Action",
+    chapter:"A lesson learned"
+  }
 
   const sDeleteBook = async () => {
     try {
@@ -36,17 +43,20 @@ const Book = ({ book }) => {
 
       <div className="progressBar">
         <CircularProgressbar
-          value={parseInt(20, 30)}
+          value={parseInt(book.completed, 30)}
           text={`${20}`}
         />
+        <div className="perc">
+          <span>{boook.percentage}%</span>
+          <span className="complet">completed</span>
+        </div>
       </div>
 
       <div className="bookRight">
         <h4 className="current">Current Chapter</h4>
-        <p className="chapter">{book.chapter}</p>
+        <p className="chapter">{boook.chapter}</p>
         <button type="button" className="progress">UPDATE PROGRESS</button>
       </div>
-
 
     </div>
   )

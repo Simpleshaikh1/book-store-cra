@@ -13,10 +13,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .book-container {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   margin-left: 4rem;
@@ -29,15 +31,20 @@
 
 .left-side {
   display: block;
-  margin-right: 30rem;
-  width: 60rem;
+  margin-right: 10rem;
+  width: 60vw;
   text-align: left;
+}
+
+.genre {
+  color: #bdb4b4;
+  font-size: smaller;
 }
 
 .commentPart {
   padding-top: 4%;
   padding-bottom: 5%;
-  padding-left: 5%;
+  padding-left: 2%;
 }
 
 .navbar {
@@ -64,14 +71,17 @@
 
 nav ul {
   display: flex;
-  gap: 21px;
+  gap: 40px;
 }
 
 nav ul li {
   list-style: none;
-  text-decoration: none;
   font-size: 20px;
   color: #7b7b7b;
+}
+
+.lis {
+  text-decoration: none;
 }
 
 .navRight {
@@ -83,49 +93,74 @@ nav ul li {
 
 nav ul li a {
   font-size: 20px;
-  color: #7b7b7b;
+  color: #121212;
   list-style: none;
+}
+
+.navLeft h1 {
+  margin-left: -3rem;
+  color: #0290ff;
 }
 
 .container {
   padding: 4% 8%;
+  width: 105vw;
+  margin-left: -3rem;
+}
+
+.container h1 {
+  color: hsl(0, 0%, 53%);
+  margin-bottom: 1rem;
 }
 
 .addBookBtn {
   padding: 1% 1%;
   width: 20%;
-  background-color: #d4dfeb;
+  background-color: #077283;
   height: 50px;
   color: #fff;
+  border: none;
 }
 
 .form {
   display: flex;
-  gap: 30px;
+  gap: 40px;
 }
 
 .form input,
 select {
   height: 50px;
   width: 50%;
-  padding: 2%;
+  padding: 1%;
 }
 
 .form select {
   padding: 0 2% 0 2%;
   color: #7b7b7b;
   height: 50px;
-  width: 30%;
+  width: 50%;
 }
 
 .progressBar {
-  width: 20%;
-  margin-right: 15rem;
+  width: 30vw;
+  margin-right: 10rem;
   padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.complet {
+  color: #bdb4b4;
+}
+
+.perc {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 .bookRight {
-  width: 40rem;
+  width: 40vw;
 }
 
 .title {
@@ -133,7 +168,7 @@ select {
 }
 
 .author {
-  color: green;
+  color: rgb(169, 223, 240);
 }
 
 .span {
@@ -143,7 +178,27 @@ select {
 
 .progress {
   margin-top: 2rem;
-  background-color: green;
-  padding: 5px;
+  background-color: #0290ff;
   color: white;
+  padding: 4px 1rem;
+  border-radius: 5%;
+  border: none;
+}
+
+.commentPart button {
+  border: none;
+  outline: none;
+  background: white;
+  cursor: pointer;
+  color: #43a6bf;
+}
+
+.current {
+  color: hsl(0, 0%, 53%);
+  margin-bottom: 5px;
+}
+
+.chapter {
+  color: hsl(0, 1%, 49%);
+  margin-bottom: 5px;
 }
