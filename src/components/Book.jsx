@@ -13,7 +13,7 @@ const Book = ({ book }) => {
       await dispatch(deleteBook(book.id))
       await dispatch(getBook());
     } catch (error) {
-      console.error(error)
+      console.log(error.message)
     }
   };
 
@@ -28,7 +28,7 @@ const Book = ({ book }) => {
         <div className="commentPart">
           <button type="button" className="comment" id="comments">Comments</button><span className="span">|</span>
          <Button type="button" id="comments"
-          onClick={() => {dispatch(sDeleteBook(book.id))}} 
+          onClick={() =>{ return sDeleteBook(book.id)}} 
          >Remove</Button>
           <span className="span">|</span><button type="button" className="edit" id="comments">Edit</button>
         </div>

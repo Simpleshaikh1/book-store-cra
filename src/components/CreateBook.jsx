@@ -12,12 +12,12 @@ const CreateBook = () => {
     e.preventDefault();
     if(!title || !author)return;
     try{
-      await dispatch(addBook([title, author]));
+       await dispatch(addBook([title, author]));
       setTitle("");
       setAuthor("");
-      await dispatch(getBook());
+       await dispatch(getBook());
     }catch(err) {
-      return err
+      console.log(err)
     }
   }
 
