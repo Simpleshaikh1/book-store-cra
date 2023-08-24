@@ -1,25 +1,9 @@
 import { useState } from "react";
-import  {getBook, addBook}  from "../redux/books/bookSlice";
-import { useDispatch } from "react-redux";
+import { addBooks} from "../redux/books/bookSlice";
 
 const CreateBook = () => {
-  const dispatch = useDispatch();
   const [ title, setTitle ] = useState("");
   const [ author, setAuthor ] = useState("");
-
-
-  const submit = async (e) => {
-    e.preventDefault();
-    if(!title || !author)return;
-    try{
-      await dispatch(addBook([title, author]));
-      setTitle("");
-      setAuthor("");
-      await dispatch(getBook());
-    }catch(err) {
-      return err
-    }
-  }
 
   return(
     <div className="container">
@@ -35,7 +19,7 @@ const CreateBook = () => {
            placeholder="Book author"
            onChange={(e) => setAuthor(e.target.value)} 
            />
-           <button className="addBookBtn" type="submit" onClick={submit}>
+           <button className="addBookBtn" type="submit" onClick={addBooks()}>
               ADD BOOK
            </button>
         </form>

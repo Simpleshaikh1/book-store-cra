@@ -1,38 +1,49 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import CreateBook from "./CreateBook";
 import Book from './Book'
-import { useSelector, useDispatch } from "react-redux";
-import {getBook} from "../redux/books/bookSlice.jsx";
+
+
+const bookStorage = [
+    {
+       id: uuidv4(),
+       genre: "Action",
+       title: "The Hunger Games",
+       author: "Suzanne Collins",
+       completed: "64%",
+       chapter: "Chapter 17",
+    },
+    {
+        id: uuidv4(),
+        genre: "Action",
+        title: "Dune",
+        author: "Frank Herbert",
+        completed: "8%",
+        chapter: "Chapter 3: 'Alesson learned'",
+    },
+    {
+        id: uuidv4(),
+        genre: "Action",
+        title: "Capital in The Twenty-First Century",
+        author: "Suzanne Collins",
+        completed: "0%",
+        chapter: "Introduction",
+    },
+];
 
 const BookList = () => {
-  const dispatch = useDispatch();
-
-  const { books, isLoading} = useSelector((store) => store.bookStore);
+    const [book, setBook] = useState([])
 
     useEffect(() => {
-      dispatch(getBook());
-    },[dispatch]);
-
-    const arrOfBooks = Object.entries(books).reduce((e, [id, bookList]) => {
-      const bookId = bookList.map((book) => ({...book, id}) );
-      return [...e, ...bookId]
-    }, [])
+        setBook(bookStorage);
+    },[]);
 
     return (
       <div>
-        {isLoading ? (
-          <div>loading...</div>
-        ):(
-          <>
-             {arrOfBooks.map((book) => (
-            <Book key={book.id} book={book} />
-              ))}
-              
-              <CreateBook />
-          </>
-        )
-      } 
-       
+        {book.map((book) => (
+          <Book key={book.id} book={book} />
+        ))}
+        <CreateBook />
       </div>
     );
 }
