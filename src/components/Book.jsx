@@ -36,8 +36,8 @@ const Book = ({ book }) => {
 
       <div className="progressBar">
         <CircularProgressbar
-          value={parseInt(book.completed, 30)}
-          text={`${book.completed}`}
+          value={parseInt(20, 30)}
+          text={`${20}`}
         />
       </div>
 
