@@ -1,17 +1,17 @@
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
-import {getBook, deleteBook} from "../redux/books/bookSlice";
+// import { useDispatch } from "react-redux";
+// import {getBook, deleteBook} from "../redux/books/bookSlice";
 import Button from "./Btn";
 
 const Book = ({ book }) => {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   const sDeleteBook = async () => {
     try {
-      await dispatch(deleteBook(book.id))
-      await dispatch(getBook());
+      // await dispatch(deleteBook(book.id))
+      // await dispatch(getBook());
     } catch (error) {
       console.log(error.message)
     }
