@@ -37,7 +37,7 @@ export const addBook = createAsyncThunk(
              api.dispatch(getBook());
              return res.data
         } catch (error) {
-            return api.rejectWithValue('error fetching data')
+            return api.rejectWithValue('error fetching data');
         }
     }
 );
