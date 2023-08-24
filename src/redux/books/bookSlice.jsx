@@ -37,21 +37,19 @@ export const addBook = createAsyncThunk(
              api.dispatch(getBook());
              return res.data
         } catch (error) {
-            return api.rejectWithValue('error fetching data')
+            return api.rejectWithValue('error fetching data');
         }
     }
 );
 
 export const deleteBook = createAsyncThunk('books/deleteBook', async (item_id, api) => {
     try {
-        const res = await axios.delete(`${deleteUrl}/${item_id}`);
-        return res.data
+        const response = await axios.delete(`${deleteUrl}/${item_id}`);
+        return response.data
     } catch (error) {
         return api.rejectWithValue('error connecting to api')
     }
 })
-
-
 
 const bookSlice = createSlice({
     name:'bookStore',
